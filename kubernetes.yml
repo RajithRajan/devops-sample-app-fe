@@ -1,0 +1,123 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  selector:
+    matchLabels:
+      app: devops-sample-app
+      tier: backend
+      track: stable
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: devops-sample-app
+        tier: backend
+        track: stable
+    spec:
+      containers:
+        - name: nodejs
+          image: "rajithr007/devops-sample-app-be:latest"
+          ports:
+            - name: http
+              containerPort: 3003
+...
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  selector:
+    matchLabels:
+      app: devops-sample-app
+      tier: frontend
+      track: stable
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: devops-sample-app
+        tier: frontend
+        track: stable
+    spec:
+      containers:
+        - name: angular
+          image: "rajithr007/devops-sample-app-ui:latest"
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/usr/sbin/nginx","-s","quit"]
+...
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-devops
+spec:
+  selector:
+    matchLabels:
+      app: devops-sample-app
+      tier: database
+      track: stable
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: devops-sample-app
+        tier: database
+        track: stable
+    spec:
+      containers:
+        - name: devops-db 
+          image: "mongo"
+          ports:
+            - name: db
+              containerPort: 27017
+...
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+spec:
+  selector:
+    app: devops-sample-app
+    tier: backend
+  ports:
+  - protocol: TCP
+    port: 3003
+    targetPort: 3003
+  type: LoadBalancer
+...
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+spec:
+  selector:
+    app: devops-sample-app
+    tier: frontend
+  ports:
+  - protocol: "TCP"
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
+...
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-devops
+spec:
+  selector:
+    app: devops-sample-app
+    tier: database
+  ports:
+  - protocol: "TCP"
+    port: 27017
+    targetPort: 27017
+...

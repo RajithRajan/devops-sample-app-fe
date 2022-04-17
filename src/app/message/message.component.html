@@ -1,0 +1,5 @@
+<div *ngIf="messages.length" class="">
+    <div *ngFor="let message of messages"
+        [ngClass]="{'invalid-feedback':message.mtype==0,'valid-feedback':message.mtype==1}" class="col-12 d-flex justify-content-center align-items-center py-3">
+        {{message.message}}</div>
+</div>

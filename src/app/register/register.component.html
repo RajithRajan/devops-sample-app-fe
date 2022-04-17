@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<div class="d-flex justify-content-center align-items-center">
+    <div class="bg-white border rounded-5 col-6 p-5 m-4">
+        <div class="d-flex justify-content-centerd-flex justify-content-center fs-3 fw-lighter" style="color: blue;">
+            Register</div>
+        <form #userForm="ngForm" (ngSubmit)="onSubmit()" id="registartionForm">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example1">User name</label>
+                <input [(ngModel)]="model.user_name" type="email" name="user_name" class="form-control" />
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example1">Email address</label>
+                <input [(ngModel)]="model.user_email" type="email" name="user_email" class="form-control" />
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+
+                <label class="form-label" for="form2Example2">Password</label>
+                <input [(ngModel)]="model.password" type="password" name="password" class="form-control" />
+            </div>
+            <!-- Login buttons -->
+            <div class="text-center">
+                <p>Already member? <a routerLink="/login">Sign in</a></p>
+            </div>
+            <!-- Submit button -->
+            <input type="submit" class="btn btn-primary btn-block mb-4" valie="Sign in" />
+
+        </form>
+    </div>
+  <app-message></app-message>
+</div>

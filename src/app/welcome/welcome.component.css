@@ -1,0 +1,13 @@
+.ex-box {
+  display: scroll;
+  align-items: flex-start;
+  justify-content: left;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.ex-box {
+  height: 100%;
+  width: calc(100% - 20px);
+}

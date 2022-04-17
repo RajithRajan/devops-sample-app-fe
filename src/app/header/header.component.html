@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <span>Devops Sample App</span>
+  <span class="example-spacer"></span>
+  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <!-- Login button -->
+    <button mat-button *ngIf="!router.isActive('/login',true) && !router.isActive('/dashboard',true)" routerLink="/login">
+      <mat-icon>login</mat-icon>
+      Login
+    </button>
+
+    <!-- Register button -->
+    <button mat-button *ngIf="!router.isActive('/register',true) && !router.isActive('/dashboard',true)" routerLink="/register">
+      <mat-icon>assignment</mat-icon>
+      Register
+    </button>
+
+    <!-- Home button -->
+    <button mat-button *ngIf="!router.isActive('/welcome',true) || router.isActive('/',true)" routerLink="/welcome">
+      <mat-icon>home</mat-icon>
+      Home
+    </button>
+  </div>
+</mat-toolbar>

@@ -1,0 +1,154 @@
+<!-- Menu bar/Tool bar -->
+<app-header></app-header>
+
+<img src="https://miro.medium.com/max/700/1*57__j14aNQfmPZyFoS1yRg.png" alt="Devops" width="500" height="300">
+
+<!-- mat-tab-group style="height: calc(100% - 500px); min-height: calc(100% - 500px); min-width: 100%; width: 100%; margin: 0px;"> -->
+<mat-tab-group dynamicHeight>
+
+  <!-- Github tab -->
+  <mat-tab label="Github">
+    <div class="ex-box mat-elevation-z4">
+      <h2>Github</h2>
+      <p>GitHub, Inc. is a provider of Internet hosting for software development and version control using Git. It offers the distributed version control and source code management (SCM) functionality of Git, plus its own features. It provides access control and several collaboration features such as bug tracking, feature requests, task management, continuous integration and wikis for every project.</p>
+      <mat-divider></mat-divider>
+      <h5>Alternatives</h5>
+      <p>BitBucket</p>
+      <p>GitLab</p>
+      <p>AWS CodeCommit</p>
+      <p>Azure Repos</p>
+    </div>
+  </mat-tab>
+
+  <!-- Jenkins tab -->
+  <mat-tab label="Jenkins">
+    <div class="ex-box mat-elevation-z4">
+      <h2>Jenkins</h2>
+      <p><img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/10/Slide1-11.jpg" alt="Image" title="Life Cycle"></p>
+      <mat-divider></mat-divider>
+      <h5>Alternatives</h5>
+      <p>Bamboo</p>
+      <p>Azure Devops</p>
+      <p>AWS Pipeline</p>
+    </div>
+  </mat-tab>
+
+  <!-- Maven tab -->
+  <mat-tab label="Maven">
+    <div class="ex-box mat-elevation-z4">
+      <h2>Maven</h2>
+      <p>Maven is the most popular Java build tool and dependency manager</p>
+      <p><img src="https://pbs.twimg.com/media/DInTPn0V4AAIIk2.jpg" alt="Image" title="Maven Cheet sheet"></p>
+      <mat-divider></mat-divider>
+      <h5>Alternatives</h5>
+      <p>Gradle</p>
+      <p>Ivy</p>
+      <p>NPM for JS</p>
+      <p>Nuget for .Net</p>
+    </div>
+  </mat-tab>
+
+  <!-- Sonarqube tab -->
+  <mat-tab label="Sonarqube">
+    <div class="ex-box mat-elevation-z4">
+      <h2>Sonarqube</h2>
+      <p>Is used for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells on 20+ programming languages. SonarQube offers reports on duplicated code, coding standards, unit tests, code coverage, code complexity, comments, bugs, and security recommendations.</p>
+
+      <h5>Alternatives</h5>
+      <p>Embold</p>
+      <p>Coverity</p>
+      <p>Checkmarx</p>
+    </div>
+  </mat-tab>
+
+  <!-- Jfrog Artifactory tab -->
+  <mat-tab label="Jfrog Artifactory">
+    <div class="ex-box mat-elevation-z4">
+      <h2>Jfrog Artifactory</h2>
+      <p>Jfrog Artifactory functions as the single source of truth for all packages, container images and Helm charts, as they move across the entire DevOps pipeline</p>
+      <iframe src="https://media.jfrog.com/wp-content/uploads/2021/03/26101228/25_08_21_JFrogCLICheatSheet.pdf" title="JFrogCLICheatSheet " width="100%" height="800px"></iframe>
+      <mat-divider></mat-divider>
+      <h5>Alternatives</h5>
+      <p>Nexus</p>
+      <p>UrbanCode Deploy</p>
+    </div>
+  </mat-tab>
+
+  <!-- Docker Tab -->
+  <mat-tab label="Docker">
+    <div class="ex-box mat-elevation-z4">
+      <h2>Docker</h2>
+      <h5>Lifecycle of docker container</h5>
+        <img src="http://docker-saigon.github.io/img/event_state.png" alt="Image" title="Life Cycle">
+
+        <h5>Cheat Sheet for Docker commands</h5>
+
+        <img src="https://raw.githubusercontent.com/sangam14/dockercheatsheets/master/dockercheatsheet8.png" alt="Image" title="Cheat sheet">
+
+        <h5 id="sample-commands">Sample Commands</h5>
+        <p>Run a container with image nginx</p>
+        <p><code>docket run nginx</code></p>
+        <p>Run container with name nginxweb with iterractive tty with port 80 mapped to host 8090 port</p>
+        <p><code>docker run -it --name nginxweb -p 8090:80 nginx</code></p>
+        <p>Run container with name nginxweb with volume mapped from host D:/docker/nginx/ to path /usr/share/nginx/html &amp; iterractive tty with port 80 mapped to host 8090 port</p>
+        <p><code>docker run -it -v D:/docker/nginx/:/usr/share/nginx/html --name nginxweb -p 8088:80 nginx</code></p>
+        <p>Run container with name tecmint-web with with port 80 mapped to host 8088 port volume mapped from host D:/docker/nginx/ to path /usr/local/apache2/htdocs/ having image httpd and tag 2.4</p>
+        <p><code>docker run -dit --name tecmint-web -p 8088:80 -v D:/docker/nginx/:/usr/local/apache2/htdocs/ httpd:2.4</code></p>
+        <p>Create and run docker compose .yml file</p>
+        <p><code>docker-compose up -d</code></p>
+
+        <mat-divider></mat-divider>
+        <h5>Alternatives</h5>
+        <p>Podman</p>
+        <p>LXD</p>
+        <p>OpenVZ</p>
+    </div>
+  </mat-tab>
+
+  <!-- Kubernetes Tab -->
+  <mat-tab label="Kubernetes">
+    <div class="ex-box mat-elevation-z4">
+      <strong>MINIKUBE BASIC</strong>
+      <p>Name Command minikube lifecycle</p>
+      <p><code>minikube delete, minikube start, minikube status,</code></p>
+      <p>Get minikube version</p>
+      <p><code>minikube version</code></p>
+      <p>Start minikube with different machine flavor</p>
+      <p><code>minikube start --memory 5120 --cpus=4</code></p>
+      <p>Start minikube with a specific k8s version</p>
+      <p><code>minikube start --kubernetes-version v1.11.0</code></p>
+      <p>###Stop a cluster</p>
+      <p><code>minikube stop</code></p>
+      <p>###Delete a cluster</p>
+      <p><code>minikube delete</code></p>
+
+      <strong>CHECK STATUS</strong>
+      <p>Get cluster info</p>
+      <p><code>kubectl cluster-info</code></p>
+      <p>Get service info</p>
+      <p><code>minikube service &lt;srv-name&gt;</code></p>
+      <p>Get dashboard</p>
+      <p><code>minikube dashboard</code></p>
+      <p>Get ip</p>
+      <p><code>minikube ip</code></p>
+      <p>Get minikube log</p>
+      <p><code>minikube logs</code></p>
+
+      <strong>MINIKUBE FOLDERS</strong>
+      <p>Mount host OS’s folder to minikube VM</p>
+      <p><code>minikube mount /host-mount-path:/vm-mount-path</code></p>
+      <p>Critical minikube folder</p>
+      <p><code>/var/lib/localkube, /var/lib/docker, /data</code></p>
+      <p>Check minikube config in your host OS desktop</p>
+      <p><code>~/.minikube/machines/minikube/config.json</code></p>
+
+      <mat-divider></mat-divider>
+
+      <h5>Alternatives</h5>
+      <p>Docker Swarm</p>
+      <p>Nomad</p>
+      <p>Amazon ECS</p>
+
+   </div>
+  </mat-tab>
+</mat-tab-group>
