@@ -28,7 +28,7 @@ pipeline {
     stage('Git') {
       steps {
         //git branch: 'develop', credentialsId: 'jenkins-gitab', url: 'http://192.168.1.11/devops/devops-sample-app.git'
-        git branch:'develop',url: 'https://github.com/RajithRajan/devops-sample-app.git'
+        git branch:'develop',url: 'https://github.com/RajithRajan/devops-sample-app-fe.git'
       }
     }
     
