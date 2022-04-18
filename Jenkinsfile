@@ -90,7 +90,7 @@ pipeline {
       steps {
         script {
             // dir("client\\angular-app") {
-            dockerImageFE = docker.build registry + "devops-sample-app-ui" + ":$env.GIT_COMMIT.take(7)"
+            dockerImageFE = docker.build registry + "devops-sample-app-ui" + ":${env.GIT_COMMIT.take(7)}"
             // }    
         }
       }
@@ -139,7 +139,7 @@ pipeline {
     post { 
         always { 
             //Remove Unused docker images
-            bat "docker rmi ${registry}devops-sample-app-ui:$env.GIT_COMMIT.take(7)"
+            bat "docker rmi ${registry}devops-sample-app-ui:${env.GIT_COMMIT.take(7)}"
             // bat "docker rmi ${registry}devops-sample-app-be:$BUILD_NUMBER"
         }
         success {
